@@ -28,11 +28,10 @@ class PageController extends Controller
         $per =  $req->input("per", "10");
         $search = $req->input("search", "");
 
-
-
-
-        $items = Employees::paginate($per);
-
+        if ($search != "")
+            $items = Employees::where("first_name", "LIKE", "%".$search."%")->orWhere("last_name", "LIKE", "%".$search."%")->paginate($per);
+        else
+            $items = Employees::paginate($per);
 
         return view("index", ["items" => $items]);
     }

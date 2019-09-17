@@ -1,1 +1,17 @@
-
+th, td {
+	padding: 10px 0;
+}
+tr.sex-M {
+	background-color: blue;
+	color: white;
+}
+tr.sex-F {
+	background-color: red;
+	color: white;
+}
+span.detail {
+	display: none;
+	border: 1px solid black;
+	background-color: green;
+	position: absolute;
+}
